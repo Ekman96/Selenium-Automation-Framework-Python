@@ -23,7 +23,9 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Show Chrome version
-        run: google-chrome --version
+        run: |
+          google-chrome --version
+          which google-chrome
 
       - name: Install dependencies
         run: |
