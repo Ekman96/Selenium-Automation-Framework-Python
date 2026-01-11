@@ -19,13 +19,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Show Chrome version
+      - name: Install Chromium and Chromedriver
         run: |
-          google-chrome --version
-          which google-chrome
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser chromium-chromedriver
+          chromium-browser --version
+          chromedriver --version
+          which chromium-browser
+          which chromedriver
 
       - name: Install dependencies
         run: |
